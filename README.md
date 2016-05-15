@@ -11,7 +11,7 @@ To use ActiveRecordLite, download the repository and require 'active_record_lite
 
 ### Creating a Database Connection
 
-Current version of ActiveRecordLite uses SQLite3 to create a connection with the database.
+ActiveRecordLite uses SQLite3 to create a connection with the database. Typically, each row is returned as an array of values, and all values are returned as unparsed strings. Setting 'results_as_hash' and 'type_translation' to true ensures that the each row is returned as an hash with the column name as key, and the values are parsed into the appropriate type. 
 ```
 def self.open(db_file_name)
   @db = SQLite3::Database.new(db_file_name)
